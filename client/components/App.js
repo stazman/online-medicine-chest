@@ -61,7 +61,7 @@ class App extends Component {
         <BottomNavbar />
       </>
     );
-  };
+  }
 }
 
 export default App;
