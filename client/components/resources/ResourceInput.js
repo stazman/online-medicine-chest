@@ -95,7 +95,7 @@ class ResourceInput extends React.Component {
                       rows='3'
                       cols='110' 
                       type='textarea'
-                      placeholder='Description' 
+                      placeholder='Description (optional)' 
                       onChange={e => this.handleChange(e)}
                       name='description'
                       value={this.state.description}    
