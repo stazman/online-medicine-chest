@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import { fetchResources } from '../actions/fetchResources';
+import { fetchAllResources } from '../actions/fetchAllResources';
 import ResourceInput from '../components/resources/ResourceInput';
 import Resources from '../components/resources/Resources';
 
 class ResourcesContainer extends React.Component {
 
   componentDidMount(){
-    this.props.fetchResources();
+    this.props.fetchAllResources();
   }
 
   render(){
@@ -35,4 +35,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {fetchResources})(ResourcesContainer);
+export default connect(mapStateToProps, {fetchAllResources})(ResourcesContainer);
