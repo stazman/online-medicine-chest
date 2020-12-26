@@ -3,9 +3,9 @@ import { Navbar } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
 import styled from 'styled-components';
-import NavbarStyles from '../components/styles/NavbarStyles';
-import { device } from '../components/styles/device';
- 
+import NavbarStyles from './styles/NavbarStyles';
+import { device } from './styles/device';
+
 const MediaQueries = styled.div`
 
 @media ${device.mobileS} {
@@ -24,7 +24,7 @@ const MediaQueries = styled.div`
       font-size: 3.4rem;
     }
   }
-    
+
   @media ${device.mobileM} {
     a.navbar-brand.top {
       font-size: 3.6rem;
@@ -41,7 +41,7 @@ const MediaQueries = styled.div`
       font-size: 3.6rem;
     }
   }
-  
+
   @media ${device.tabletS} {
     a.navbar-brand.top {
       font-size: 4rem;
@@ -53,7 +53,7 @@ const MediaQueries = styled.div`
       right: 5rem;
     }
   }
-    
+
   @media ${device.tabletL} {
     a.navbar-brand.top {
       font-size: 4.6rem;
@@ -71,7 +71,7 @@ const MediaQueries = styled.div`
       right: 5rem;
     }
   }
-  
+
   @media ${device.laptop} {
     a.top.navbar-brand {
       padding-left: 3rem;
@@ -94,7 +94,7 @@ const MediaQueries = styled.div`
       right: 6rem;
     }
   }
-    
+
   @media ${device.custLaptopPos1} {
     div.mr-auto.navbar-nav {
       position: fixed;
@@ -117,7 +117,7 @@ const MediaQueries = styled.div`
       right: 32rem;
     }
   }
-  
+
   @media ${device.custLaptopPos2} {
     a.navbar-brand.top {
       font-size: 4.5rem;
@@ -133,7 +133,7 @@ const MediaQueries = styled.div`
       right: 32rem;
     }
   }
-  
+
   @media ${device.laptopL} {
     a.top.navbar-brand {
       font-size: 5rem;
@@ -178,7 +178,7 @@ const MediaQueries = styled.div`
       font-size: 4rem;
     }
   }
-  
+
   @media ${device.desktop} {
     a.navbar-brand.top {
       font-size: 5rem;

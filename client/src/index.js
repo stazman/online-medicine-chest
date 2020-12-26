@@ -34,7 +34,7 @@ ReactDOM.render(
           width: 100%;
           height: 100%;
         }
-        
+
         body {
           font-family: Arial;
           background-color: #5D72D0;

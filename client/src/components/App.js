@@ -39,7 +39,7 @@ class App extends Component {
             }
             {
               <Route 
-                exact path='/resource_home' 
+                exact path='http://localhost:8000/resource_home' 
                 component={ResourceHome}
               />
             }

@@ -22,9 +22,9 @@ const MediaQueries = styled.div`
     }
     button.btn-submit {
       font-size: 2.7rem;
-    }    
+    }
   }
-  
+
   @media ${device.laptop} {
     textarea {
       font-size: 4rem;
@@ -34,7 +34,7 @@ const MediaQueries = styled.div`
     }
     button.btn-submit {
       font-size: 3.6rem;
-    }        
+    }
   }
 `
 
@@ -48,7 +48,7 @@ class ResourceInput extends React.Component {
 
   handleChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value    
+      [e.target.name]: e.target.value
     })
   }
 
@@ -58,7 +58,7 @@ class ResourceInput extends React.Component {
     this.setState = ({
       title: '',
       description: '',
-      url: ''  
+      url: ''
     })
     this.props.history.push('/resources');
   }
@@ -78,11 +78,11 @@ class ResourceInput extends React.Component {
                     </Form.Label>
                     <br></br>
                     <Form.Control
-                      as='textarea' 
+                      as='textarea'
                       type='textarea'
                       rows='1'
                       cols='110'
-                      placeholder='Title' 
+                      placeholder='Title'
                       onChange={e => this.handleChange(e)}
                       name='title'
                       value={this.state.title}
@@ -91,31 +91,31 @@ class ResourceInput extends React.Component {
 
                   <Form.Group controlId='formDescription'>
                     <Form.Control
-                      as='textarea' 
+                      as='textarea'
                       rows='3'
-                      cols='110' 
+                      cols='110'
                       type='textarea'
-                      placeholder='Description (optional)' 
+                      placeholder='Description (optional)'
                       onChange={e => this.handleChange(e)}
                       name='description'
-                      value={this.state.description}    
+                      value={this.state.description}
                     />
                   </Form.Group>
-                  
+
                   <Form.Group controlId='formURL'>
                     <Form.Control
-                      as='textarea' 
+                      as='textarea'
                       type='textarea'
                       rows='1'
                       cols='110'
-                      placeholder='Website URL' 
+                      placeholder='Website URL'
                       onChange={e => this.handleChange(e)}
                       name='url'
-                      value={this.state.url} 
+                      value={this.state.url}
                     />
                     <br></br>
 
-                    <Form.Text>                
+                    <Form.Text>
                       Copy the entire URL of the website (the web address at the top of the website) and paste it above
                     </Form.Text>
                   </Form.Group>
@@ -124,12 +124,12 @@ class ResourceInput extends React.Component {
                   <Button type='submit' className='btn-submit'>
                     Submit
                   </Button>
-                  
+
                 </Form>
               </Row>
 
             </TextStyles>
-          </ButtonStyles> 
+          </ButtonStyles>
         </RowStyles>
       </MediaQueries>
     )

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
-import NavbarStyles from '../components/styles/NavbarStyles';
-import { device } from '../components/styles/device';
+import NavbarStyles from './styles/NavbarStyles';
+import { device } from './styles/device';
 
 const MediaQueries = styled.div`
 
@@ -31,7 +31,7 @@ const MediaQueries = styled.div`
         visibility: hidden;
   }
 `;
-  
+
 const BottomNavBar = () => {
   return (
     <>

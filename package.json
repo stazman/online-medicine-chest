@@ -1,73 +1,28 @@
 {
-  "name": "daily-weight-loss-advisor-mern",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.5",
-    "@testing-library/react": "^10.4.9",
-    "@testing-library/user-event": "^11.4.2",
-    "audit": "^0.0.6",
-    "axios": "^0.19.2",
-    "babel-cli": "^6.18.0",
-    "babel-preset-es2015": "^6.24.1",
-    "body-parser": "^1.19.0",
-    "bootstrap": "^4.5.3",
-    "braces": ">=2.3.1",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.5",
-    "eslint-plugin-react": "^7.21.5",
-    "express": "^4.17.1",
-    "fix": "^0.0.3",
-    "moment": "^2.29.1",
-    "moment-timezone": "^0.5.31",
-    "mongoose": "^5.10.13",
-    "node-forge": ">=0.10.0",
-    "nodemon": "^2.0.6",
-    "react": "^16.14.0",
-    "react-bootstrap": "^1.4.0",
-    "react-datepicker": "^3.3.0",
-    "react-dom": "^16.14.0",
-    "react-modal": "^3.11.2",
-    "react-moment": "^0.9.7",
-    "react-redux": "^7.2.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.4",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0",
-    "styled-components": "^5.2.1",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.11"
-  },
+  "name": "daily-fitness-advisor-mern",
+  "version": "1.0.0",
+  "description": "Daily Fitness Advisor built with MERN stack",
+  "main": "server.js",
   "scripts": {
-    "webpack": "webpack --mode development",
-    "dev": "webpack --mode development",
-    "start": "npm run webpack && nodemon --exec babel-node -- bin/www"
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "Christopher DiStasio",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "client": "file:client",
+    "config": "^3.3.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "mongoose": "^5.9.5",
+    "normalize-url": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/preset-react": "^7.12.5",
-    "babel": "^6.23.0",
-    "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^7.13.0",
-    "mocha": "^8.2.1"
+    "concurrently": "^5.1.0",
+    "eslint": "^6.6.0",
+    "nodemon": "^2.0.2"
   }
 }
