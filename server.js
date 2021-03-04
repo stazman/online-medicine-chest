@@ -2,9 +2,11 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
-const mongoose = require('mongoose');
+const connectDB = require('./config/db')
 const cors = require('cors');
-const port = 4000;
+const PORT = process.env.PORT || 4000;
+
+connectDB();
 
 app.use(cors());
 app.use(express.json());
@@ -17,26 +19,26 @@ app.use(express.static(path.join(__dirname, './client')));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: false}));
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/daily-fitness-advisor-mern', {useNewURLParser: true });
+// mongoose.connect('mongodb://127.0.0.1:27017/daily-fitness-advisor-mern', {useNewURLParser: true });
 
-const connection = mongoose.connection;
+// const connection = mongoose.connection;
 
-connection.once('open', function(){
-  console.log('MongoDB db connection established successfully');
-})
+// connection.once('open', function(){
+//   console.log('MongoDB db connection established successfully');
+// })
 
 //TODO:
 // const advisorRouter = require('./routes/AdvisorRoutes');
 // const journalRouter = require('./routes/JournalRoutes');
-const resourceRouter = require('./routes/ResourceRoutes');
+// const resourceRouter = require('./routes/ResourceRoutes');
 
 //TODO:
 // app.use('/advisors', advisorRouter);
 // app.use('/journals', journalRouter);
-app.use('/resources', resourceRouter);
+// app.use('/resources', resourceRouter);
 
-app.listen(port, function(){
-  console.log('Server is running on Port ' + port);
+app.listen(PORT, function(){
+  console.log('Server is running on Port ' + PORT);
 })
 
 
