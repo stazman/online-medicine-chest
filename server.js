@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const connectDB = require('./config/db');
+const jwt = require('jsonwebtoken');
 const PORT = process.env.PORT || 4000;
 
 connectDB();
