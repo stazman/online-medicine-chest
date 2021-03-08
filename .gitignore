@@ -25,3 +25,5 @@ yarn-error.log*
 
 bundle.js
 client/bundle.js
+
+config/default.json
