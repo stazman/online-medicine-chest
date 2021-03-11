@@ -13,6 +13,7 @@ app.use(express.json({
 
 app.get('/', (req, res) => res.send('API running'));
 
+app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/advisors', require('./routes/api/advisors'));
 app.use('/api/journal_entries', require('./routes/api/journal_entries'));
