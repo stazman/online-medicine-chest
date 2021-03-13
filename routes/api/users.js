@@ -18,7 +18,7 @@ router.post('/', [
     return res.status(422).json({errors: errors.array() })
   }
 
-  const { name, email, password } = req.body;
+  const { name, email, password, gravatar } = req.body;
 
   try {
 
@@ -31,7 +31,8 @@ router.post('/', [
     user = new User({
       name,
       email,
-      password
+      password,
+      gravatar
     })
 
     const salt = await bcrypt.genSalt(10);
