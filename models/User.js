@@ -19,6 +19,8 @@ const UserSchema = new mongoose.Schema({
   }
 })
 
+let User;
+
 module.exports = User = mongoose.model('user', UserSchema);
 
 //Note: 'user' here is the name of the model, not to be confused with file name User

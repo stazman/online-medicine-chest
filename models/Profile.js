@@ -5,14 +5,18 @@ const ProfileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'
   },
+  bio: {
+    type: String
+  },
   interests: {
-    type: [String],
-    required: true
+    type: [String]
   },
   date: {
     type: Date,
     default: Date.now
   }
 })
+
+let Profile;
 
 module.exports = Profile = mongoose.model('profile', ProfileSchema);
