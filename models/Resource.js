@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
-
-let resourceSchema = new Schema({
+const ResourceSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user'
+  },
   title: {
     type: String,
     required: false,
@@ -16,13 +18,10 @@ let resourceSchema = new Schema({
   url: {
     type: String,
     required: true,
-    trim: true,
-    minlength: 1
+    trim: true
   }
-}, {
-  timestamps: true
 });
 
-const Resource = mongoose.model('Resource', resourceSchema);
+let Resource;
 
-module.exports = Resource;
+module.exports = Resource = mongoose.model('resource', ResourceSchema);
