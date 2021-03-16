@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Switch, Route } from 'react-router-dom';
 import TopNavbar from './TopNavbar';
+import Register from './registration_and_login/Register'
+import Login from './registration_and_login/Login'
 import Advisor from './advisor/Advisor';
 import FoodAdvisorsContainer from '../containers/FoodAdvisorsContainer';
 import TrackerHome from './trackers/TrackerHome';
@@ -20,41 +22,53 @@ class App extends Component {
         <Layout>
           <Switch>
             {
-              <Route 
-                exact path='/' 
+              <Route
+                exact path='/'
                 component={Advisor}
               />
             }
             {
-              <Route 
-                exact path='/tracker_home' 
+              <Route
+                exact path='/register'
+                component={Register}
+              />
+            }
+            {
+              <Route
+                exact path='/login'
+                component={Login}
+              />
+            }
+            {
+              <Route
+                exact path='/tracker_home'
                 component={TrackerHome}
               />
             }
             {
-              <Route 
-                exact path='/journal_home' 
+              <Route
+                exact path='/journal_home'
                 component={JournalHome}
               />
             }
             {
-              <Route 
-                exact path='http://localhost:8000/resource_home' 
+              <Route
+                exact path='http://localhost:8000/resource_home'
                 component={ResourceHome}
               />
             }
             {
-              <Route 
-                exact path='/community_home' 
+              <Route
+                exact path='/community_home'
                 component={CommunityHome}
               />
             }
           </Switch>
 
           <FoodAdvisorsContainer />
-          
+
           <JournalContainer />
-          
+
           <ResourcesContainer />
 
         </Layout>
