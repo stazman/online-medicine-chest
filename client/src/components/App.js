@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import TopNavbar from './TopNavbar';
 import Register from './registration_and_login/Register'
@@ -15,9 +15,20 @@ import { Provider } from 'react-redux';
 import store from '../store'
 import BottomNavbar from './BottomNavbar';
 import { Layout } from './Layout';
-import Alert from './Alert'
+import Alert from './Alert';
+import { loadUser } from '../actions/auth';
+import setAuthToken from '../utils/setAuthToken';
+
+if(localStorage.token){
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
+
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
+
   return (
     <Provider store={store}>
       <Router>
