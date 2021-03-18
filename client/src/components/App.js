@@ -15,6 +15,7 @@ import { Provider } from 'react-redux';
 import store from '../store'
 import BottomNavbar from './BottomNavbar';
 import { Layout } from './Layout';
+import Alert from './Alert'
 
 const App = () => {
   return (
@@ -22,56 +23,58 @@ const App = () => {
       <Router>
         <TopNavbar />
           <Layout>
-            <Switch>
-              {
-                <Route
-                  exact path='/'
-                  component={Advisor}
-                />
-              }
-              {
-                <Route
-                  exact path='/register'
-                  component={Register}
-                />
-              }
-              {
-                <Route
-                  exact path='/login'
-                  component={Login}
-                />
-              }
-              {/* {
-                <Route
-                  exact path='/tracker_home'
-                  component={TrackerHome}
-                />
-              } */}
-              {/* {
-                <Route
-                  exact path='/journal_home'
-                  component={JournalHome}
-                />
-              } */}
-              {/* {
-                <Route
-                  exact path='http://localhost:8000/resource_home'
-                  component={ResourceHome}
-                />
-              } */}
-              {/* {
-                <Route
-                  exact path='/community_home'
-                  component={CommunityHome}
-                />
-              } */}
-            </Switch>
+            <br></br><br></br><br></br><br></br><br></br><br></br>
+            <Alert />
+              <Switch>
+                {
+                  <Route
+                    exact path='/'
+                    component={Advisor}
+                  />
+                }
+                {
+                  <Route
+                    exact path='/register'
+                    component={Register}
+                  />
+                }
+                {
+                  <Route
+                    exact path='/login'
+                    component={Login}
+                  />
+                }
+                {/* {
+                  <Route
+                    exact path='/tracker_home'
+                    component={TrackerHome}
+                  />
+                } */}
+                {/* {
+                  <Route
+                    exact path='/journal_home'
+                    component={JournalHome}
+                  />
+                } */}
+                {/* {
+                  <Route
+                    exact path='http://localhost:8000/resource_home'
+                    component={ResourceHome}
+                  />
+                } */}
+                {/* {
+                  <Route
+                    exact path='/community_home'
+                    component={CommunityHome}
+                  />
+                } */}
+              </Switch>
 
-            {/* <FoodAdvisorsContainer />
+              {/* <FoodAdvisorsContainer />
 
-            <JournalContainer />
+              <JournalContainer />
 
-            <ResourcesContainer /> */}
+              <ResourcesContainer /> */}
 
           </Layout>
         <BottomNavbar />
