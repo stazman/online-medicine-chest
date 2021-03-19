@@ -6,4 +6,65 @@ Users
 
   Adds password rules to validation
 
-Add posts and comments
+Adds profile to dashboard
+
+Adds Resources feature
+
+Adds Journals feature
+
+Adds Advisor feature
+
+Adds Community feature
+
+  Adds posts and comments
+
+Adds Tracker feature
+
+Refactors CSS across app
+
+Lints
+
+
+
+
+Unused code:
+
+// import FoodAdvisorsContainer from '../containers/FoodAdvisorsContainer';
+// import TrackerHome from './trackers/TrackerHome';
+// import JournalHome from './journal/JournalHome';
+// import JournalContainer from '../containers/JournalContainer';
+// import ResourceHome from './resources/ResourceHome';
+// import ResourcesContainer from '../containers/ResourcesContainer';
+// import CommunityHome from './community/CommunityHome';
+
+                {/* {
+                  <Route
+                    exact path='/tracker_home'
+                    component={TrackerHome}
+                  />
+                } */}
+                {/* {
+                  <Route
+                    exact path='/journal_home'
+                    component={JournalHome}
+                  />
+                } */}
+                {/* {
+                  <Route
+                    exact path='http://localhost:8000/resource_home'
+                    component={ResourceHome}
+                  />
+                } */}
+                {/* {
+                  <Route
+                    exact path='/community_home'
+                    component={CommunityHome}
+                  />
+                } */}
+              </Switch>
+
+              {/* <FoodAdvisorsContainer />
+
+              <JournalContainer />
+
+              <ResourcesContainer /> */}
