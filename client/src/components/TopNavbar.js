@@ -5,6 +5,9 @@ import { NavDropdown } from 'react-bootstrap';
 import styled from 'styled-components';
 import NavbarStyles from './styles/NavbarStyles';
 import { device } from './styles/device';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../actions/auth'
 
 const MediaQueries = styled.div`
 
@@ -205,7 +208,40 @@ const MediaQueries = styled.div`
   }
 `;
 
-const TopNavbar = () => {
+const TopNavbar = ({ auth: { isAuthenticated, loading }, logout}) => {
+
+  const authLinks = (
+    <>
+      <NavDropdown.Item onClick={logout} href='#!'>Log out</NavDropdown.Item>
+      <NavDropdown.Item className="divider">-------------------</NavDropdown.Item>
+      <NavDropdown.Item href='/'>Settings</NavDropdown.Item>
+      <NavDropdown.Item className="divider">-------------------</NavDropdown.Item>
+      <NavDropdown.Item href='/'>About DWLA </NavDropdown.Item>
+      <NavDropdown.Item href='/'>Contact DWLA</NavDropdown.Item>
+      <NavDropdown.Item className="divider">-------------------</NavDropdown.Item>
+      <NavDropdown.Item href='/'>Trackers</NavDropdown.Item>
+      <NavDropdown.Item href='/'>Journal</NavDropdown.Item>
+      <NavDropdown.Item href='/'>Resources</NavDropdown.Item>
+      <NavDropdown.Item href='/'>Community</NavDropdown.Item>
+    </>
+  );
+
+  const guestLinks = (
+    <>
+      <NavDropdown.Item href='/login'>Login</NavDropdown.Item>
+      <NavDropdown.Item className="divider">-------------------</NavDropdown.Item>
+      <NavDropdown.Item href='/register'>Register</NavDropdown.Item>
+      <NavDropdown.Item className="divider">-------------------</NavDropdown.Item>
+      <NavDropdown.Item href='/'>About DWLA </NavDropdown.Item>
+      <NavDropdown.Item href='/'>Contact DWLA</NavDropdown.Item>
+      <NavDropdown.Item className="divider">-------------------</NavDropdown.Item>
+      <NavDropdown.Item href='/'>Trackers</NavDropdown.Item>
+      <NavDropdown.Item href='/'>Journal</NavDropdown.Item>
+      <NavDropdown.Item href='/'>Resources</NavDropdown.Item>
+      <NavDropdown.Item href='/'>Community</NavDropdown.Item>
+    </>
+  );
+
   return (
     <>
       <MediaQueries>
@@ -220,16 +256,7 @@ const TopNavbar = () => {
             {/* <Navbar.Collapse id='basic-navbar-nav'> */}
             <Nav className='mr-auto'>
               <NavDropdown id='basic-nav-dropdown'>
-                <NavDropdown.Item href='/'>About DWLA </NavDropdown.Item>
-                <NavDropdown.Item href='/'>Contact DWLA</NavDropdown.Item>
-                <NavDropdown.Item href='/'>Settings</NavDropdown.Item>
-                <NavDropdown.Item href='/register'>Registration</NavDropdown.Item>
-                <NavDropdown.Item href='/login'>Login/Logout</NavDropdown.Item>
-                <NavDropdown.Item className="divider">-------------------</NavDropdown.Item>
-                <NavDropdown.Item href='/'>Trackers</NavDropdown.Item>
-                <NavDropdown.Item href='/'>Journal</NavDropdown.Item>
-                <NavDropdown.Item href='/'>Resources</NavDropdown.Item>
-                <NavDropdown.Item href='/'>Community</NavDropdown.Item>
+                { !loading && (<>{ isAuthenticated ? authLinks : guestLinks}</>) }
               </NavDropdown>
             </Nav>
             {/* </Navbar.Collapse> */}
@@ -240,4 +267,13 @@ const TopNavbar = () => {
   );
 };
 
-export default TopNavbar;
+TopNavbar.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+}
+
+const mapStatetoProps = state => ({
+  auth: state.auth
+})
+
+export default connect( mapStatetoProps, {logout} )(TopNavbar);
