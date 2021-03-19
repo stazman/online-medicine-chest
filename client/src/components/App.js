@@ -4,20 +4,16 @@ import TopNavbar from './TopNavbar';
 import Register from './registration_and_login/Register'
 import Login from './registration_and_login/Login'
 import Advisor from './advisor/Advisor';
-// import FoodAdvisorsContainer from '../containers/FoodAdvisorsContainer';
-// import TrackerHome from './trackers/TrackerHome';
-// import JournalHome from './journal/JournalHome';
-// import JournalContainer from '../containers/JournalContainer';
-// import ResourceHome from './resources/ResourceHome';
-// import ResourcesContainer from '../containers/ResourcesContainer';
-// import CommunityHome from './community/CommunityHome';
 import { Provider } from 'react-redux';
 import store from '../store'
 import BottomNavbar from './BottomNavbar';
 import { Layout } from './Layout';
 import Alert from './Alert';
+import Dashboard from './Dashboard';
+import PrivateRoute from './routing/PrivateRoute';
 import { loadUser } from '../actions/auth';
 import setAuthToken from '../utils/setAuthToken';
+
 
 if(localStorage.token){
   setAuthToken(localStorage.token);
@@ -36,57 +32,32 @@ const App = () => {
           <Layout>
             <br></br><br></br><br></br><br></br><br></br><br></br>
             <Alert />
-              <Switch>
-                {
-                  <Route
-                    exact path='/'
-                    component={Advisor}
-                  />
-                }
-                {
-                  <Route
-                    exact path='/register'
-                    component={Register}
-                  />
-                }
-                {
-                  <Route
-                    exact path='/login'
-                    component={Login}
-                  />
-                }
-                {/* {
-                  <Route
-                    exact path='/tracker_home'
-                    component={TrackerHome}
-                  />
-                } */}
-                {/* {
-                  <Route
-                    exact path='/journal_home'
-                    component={JournalHome}
-                  />
-                } */}
-                {/* {
-                  <Route
-                    exact path='http://localhost:8000/resource_home'
-                    component={ResourceHome}
-                  />
-                } */}
-                {/* {
-                  <Route
-                    exact path='/community_home'
-                    component={CommunityHome}
-                  />
-                } */}
-              </Switch>
-
-              {/* <FoodAdvisorsContainer />
-
-              <JournalContainer />
-
-              <ResourcesContainer /> */}
-
+            <Switch>
+              {
+                <Route
+                  exact path='/'
+                  component={Advisor}
+                />
+              }
+              {
+                <Route
+                  exact path='/register'
+                  component={Register}
+                />
+              }
+              {
+                <Route
+                  exact path='/login'
+                  component={Login}
+                />
+              }
+              {
+                <PrivateRoute
+                  exact path='/dashboard'
+                  component={Dashboard}
+                />
+              }
+            </Switch>
           </Layout>
         <BottomNavbar />
       </Router>
