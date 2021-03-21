@@ -214,6 +214,7 @@ const TopNavbar = ({ auth: { isAuthenticated, loading }, logout}) => {
     <>
       <NavDropdown.Item onClick={logout} href='#!'>Log out</NavDropdown.Item>
       <NavDropdown.Item className="divider">-------------------</NavDropdown.Item>
+      <NavDropdown.Item href='/dashboard'>Dashboard</NavDropdown.Item>
       <NavDropdown.Item href='/'>Settings</NavDropdown.Item>
       <NavDropdown.Item className="divider">-------------------</NavDropdown.Item>
       <NavDropdown.Item href='/'>About DWLA </NavDropdown.Item>
