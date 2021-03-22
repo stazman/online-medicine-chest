@@ -87,7 +87,7 @@ export const login = (email, password) => async dispatch => {
 
   } catch(err){
 
-    const errors = err.res.data.errors;
+    const errors = err.response.data.errors;
 
     if(errors){
       errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
@@ -100,10 +100,6 @@ export const login = (email, password) => async dispatch => {
 };
 
 export const logout = () => dispatch => {
-  dispatch({
-    type: LOGOUT
-  });
-  dispatch({
-    type: CLEAR_PROFILE
-  });
+  dispatch({ type: LOGOUT });
+  dispatch({ type: CLEAR_PROFILE });
 };
