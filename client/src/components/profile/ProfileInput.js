@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile } from '../../actions/profile';
+import {Button} from 'react-bootstrap';
+import ButtonStyles from '../styles/ButtonStyles';
 
 
 const ProfileInput = ( { createProfile, history } ) => {
@@ -18,7 +20,7 @@ const ProfileInput = ( { createProfile, history } ) => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    createProfile( formData, history );
+    createProfile( formData, history, true );
   };
 
   return (
@@ -61,7 +63,9 @@ const ProfileInput = ( { createProfile, history } ) => {
           className="btn btn-primary my-1"
          />
         <br></br><br></br>
-        <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
+        <ButtonStyles>
+          <Button variant="main" href="dashboard">Go Back</Button>
+        </ButtonStyles>
       </form>
     </>
   )

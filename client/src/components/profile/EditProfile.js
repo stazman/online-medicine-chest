@@ -3,6 +3,8 @@ import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
+import {Button} from 'react-bootstrap';
+import ButtonStyles from '../styles/ButtonStyles';
 
 
 const EditProfile = ({
@@ -25,7 +27,7 @@ const EditProfile = ({
       bio: loading || !profile.bio ? '' : profile.bio,
       interests: loading || !profile.interests ? '' : profile.interests.join(',')
     })
-  }, [loading]);
+  }, [getCurrentProfile, loading]);
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,7 +39,7 @@ const EditProfile = ({
 
   return (
     <>
-      <h1 className="large text-primary">Create Your Profile</h1>
+      <h1 className="large text-primary">Update Your Profile</h1>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <h3>Let us know a little about you!</h3>
@@ -68,11 +70,10 @@ const EditProfile = ({
         </div>
 
         <input type="submit" className="btn btn-primary my-1" />
-        <br></br>
-        <br></br>
-        <a className="btn btn-light my-1" href="dashboard.html">
-          Go Back
-        </a>
+        <br></br><br></br><br></br>
+        <ButtonStyles>
+          <Button variant="main" href="dashboard">Go Back</Button>
+        </ButtonStyles>
       </form>
     </>
   );
