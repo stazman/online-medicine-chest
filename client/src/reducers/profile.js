@@ -2,8 +2,6 @@ import {
   GET_PROFILE,
   PROFILE_ERROR,
   CLEAR_PROFILE
-  // CREATE_PROFILE,
-  // REMOVE_PROFILE
 } from '../actions/types';
 
 const initialState = {
