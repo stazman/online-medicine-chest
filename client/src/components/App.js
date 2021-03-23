@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import TopNavbar from './TopNavbar';
-import Register from './registration_and_login/Register'
-import Login from './registration_and_login/Login'
+import Register from './registration_and_login/Register';
+import Login from './registration_and_login/Login';
+import ProfileInput from './profile/ProfileInput';
 import Advisor from './advisor/Advisor';
 import { Provider } from 'react-redux';
-import store from '../store'
+import store from '../store';
 import BottomNavbar from './BottomNavbar';
 import { Layout } from './Layout';
 import Alert from './Alert';
@@ -55,6 +56,12 @@ const App = () => {
                 <PrivateRoute
                   exact path='/dashboard'
                   component={Dashboard}
+                />
+              }
+                            {
+                <PrivateRoute
+                  exact path='/create-profile'
+                  component={ProfileInput}
                 />
               }
             </Switch>
