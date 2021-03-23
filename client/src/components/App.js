@@ -4,13 +4,14 @@ import TopNavbar from './TopNavbar';
 import Register from './registration_and_login/Register';
 import Login from './registration_and_login/Login';
 import ProfileInput from './profile/ProfileInput';
+import EditProfile from './profile/EditProfile';
 import Advisor from './advisor/Advisor';
 import { Provider } from 'react-redux';
 import store from '../store';
 import BottomNavbar from './BottomNavbar';
 import { Layout } from './Layout';
 import Alert from './Alert';
-import Dashboard from './Dashboard';
+import Dashboard from './dashboard/Dashboard';
 import PrivateRoute from './routing/PrivateRoute';
 import { loadUser } from '../actions/auth';
 import setAuthToken from '../utils/setAuthToken';
@@ -58,10 +59,16 @@ const App = () => {
                   component={Dashboard}
                 />
               }
-                            {
+              {
                 <PrivateRoute
                   exact path='/create-profile'
                   component={ProfileInput}
+                />
+              }
+              {
+                <PrivateRoute
+                  exact path='/edit-profile'
+                  component={EditProfile}
                 />
               }
             </Switch>
@@ -70,6 +77,6 @@ const App = () => {
       </Router>
     </Provider>
   );
-}
+};
 
 export default App;
