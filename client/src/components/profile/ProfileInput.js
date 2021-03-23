@@ -1,25 +1,32 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createProfile } from '../../actions/profile';
 
 
-const ProfileInput = props => {
+const ProfileInput = ( { createProfile, history } ) => {
 
   const [formData, setFormData] = useState({
     bio: '',
     interests: []
   });
 
-  const {
-    bio,
-    interests
-  } = setFormData;
+  const { bio, interests } = formData;
+
+  const onChange = e => setFormData({ ...formData, [e.target.name] : e.target.value });
+
+  const onSubmit = async e => {
+    e.preventDefault();
+    createProfile( formData, history );
+  };
 
   return (
     <>
       <h1 className="large text-primary">
         Create Your Profile
       </h1>
-      <form className="form">
+      <form className="form" onSubmit={ e => onSubmit(e)}>
         <div className="form-group">
             <h3>Let us know a little about you!</h3>
             <br></br>
@@ -28,26 +35,40 @@ const ProfileInput = props => {
               name='bio'
               placeholder="A short bio of yourself"
               rows='3'
-              cols='50'>
+              cols='50'
+              value={bio}
+              onChange={ e => onChange(e)}
+            >
             </textarea>
         </div>
         <div className="form-group">
-          <input type="text" placeholder="What are some of your interests?" name="interests" size='50' />
+          <input
+            id='interests'
+            name='interests'
+            type="text"
+            placeholder="What are some of your interests?"
+            size='50'
+            value={interests}
+            onChange={ e => onChange(e)}
+          />
           <small className="form-text">Please use comma separated values (eg.
             reading, hiking, cats)
           </small>
         </div>
 
-        <input type="submit" className="btn btn-primary my-1" />
+        <input
+          type="submit"
+          className="btn btn-primary my-1"
+         />
         <br></br><br></br>
         <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
       </form>
-      </>
-)
-}
+    </>
+  )
+};
 
 ProfileInput.propTypes = {
+  createProfile: PropTypes.func.isRequired
+};
 
-}
-
-export default ProfileInput;
+export default connect (null, { createProfile })(withRouter(ProfileInput));
