@@ -21,24 +21,43 @@ const Dashboard = ({
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <>
-      <h1>Dashboard</h1>
-      <h3>Welcome, {user && user.name}</h3>
-
-
-      { profile !== null ?
+    <ButtonStyles>
+      <h3>Welcome, {user && user.name}!</h3>
+        <br></br><br></br>
+        { profile !== null ?
+          <>
+            <div>
+              <h3>
+                Your current bio:
+              </h3>
+              <p>{profile.bio}</p>
+            </div>
+            <br></br><br></br>
+            <div>
+              <h3>
+                Your current interests:
+              </h3>
+              <br></br>
+              <ul className='inline'>
+                {profile.interests.map( i =>
+                  <li className='list-button'><Button variant='show-vsmall'>{i}</Button>&nbsp;&nbsp;</li>
+                )}
+              </ul>
+            </div>
+            <br></br><br></br><br></br>
+            <DashboardActions />
+          </>
+        :
         <>
-          <DashboardActions />
-        </> :
-      <ButtonStyles>
-        <p>You have not set up a profile. Please add some info ...</p>
-          <br></br>
-          <Button variant="submit-sm" href='create-profile'>
-            Create Profile
-          </Button>
-      </ButtonStyles>
+            <p>You have not set up a profile. Please add some info ...</p>
+              <br></br>
+              <Button variant="submit-sm" href='create-profile'>
+                Create Profile
+              </Button>
+        </>
       }
-    </>
+    </ButtonStyles>
+
   );
 };
 
