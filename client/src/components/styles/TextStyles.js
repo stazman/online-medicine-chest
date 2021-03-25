@@ -44,6 +44,10 @@ const TextStyles = styled.div`
     line-height: 110%;
   }
 
+  .font-v-sm {
+    font-size: 1rem;
+  }
+
   label.form-label {
     font-size: 2rem;
     line-height: 125%;

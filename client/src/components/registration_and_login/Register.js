@@ -16,6 +16,9 @@ const MediaQueries = styled.div`
     p, a {
       font-size: 1.4rem;
     }
+    .btn-submit-sm {
+      font-size: 1.2rem;
+    }
     .link-standard {
       font-size: 1.4rem
     }
@@ -25,8 +28,8 @@ const MediaQueries = styled.div`
     a, p {
       font-size: 1.8rem;
     }
-    button.btn-submit {
-      font-size: 1.8rem;
+    .btn-submit-sm {
+      font-size: 1.6rem;
     }
     .link-standard {
       font-size: 1.8rem
@@ -37,8 +40,8 @@ const MediaQueries = styled.div`
     a, p, li {
       font-size: 2rem;
     }
-    button.btn-submit {
-      font-size: 2rem;
+    .btn-submit-sm {
+      font-size: 1.8rem;
     }
   }
 `
@@ -124,7 +127,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 onChange={e => onChange(e)} required
               />
             </div>
-            <Button type='submit 'variant="submit-sm" value="Register">Register</Button>
+            <Button type='submit' variant="submit-sm" value="register">Register</Button>
           </form>
           <br></br>
 
