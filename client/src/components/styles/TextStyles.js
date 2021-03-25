@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const TextStyles = styled.div`
 
   a {
-    color: white;
-    font-size: 2.2rem;
+    color: navy;
+    font-size: 2rem;
     line-height: 120%;
   }
 
@@ -21,10 +21,14 @@ const TextStyles = styled.div`
       1px 1px 0 #000;
   }
 
+  h3 {
+    font-size: 2.6rem;
+  }
+
   h4 {
     font-size: 3rem;
   }
-    
+
   h5 {
     font-size: 2.6rem;
     line-height: 115%;
@@ -34,9 +38,9 @@ const TextStyles = styled.div`
   h6 {
     font-size: 2.8rem;
   }
-  
-  p {
-    font-size: 2.8rem;
+
+  p, li {
+    font-size: 1.4rem;
     line-height: 110%;
   }
 
@@ -45,12 +49,18 @@ const TextStyles = styled.div`
     line-height: 125%;
   }
 
-  input[type='radio'] { 
+  input[type='radio'] {
     position: absolute;
     top: 20%;
     transform: scale(1.4);
   }
-  
+
+  input[type='email'],
+  input[type='password'],
+  input[type='text'] {
+    font-size: 1.4rem;
+  }
+
   label.form-check-label {
     font-size: 1.6rem;
   }
@@ -68,6 +78,10 @@ const TextStyles = styled.div`
 
   time {
     font-size: 3rem;
+  }
+
+  .link-standard {
+    font-size: 2rem
   }
 `;
 
