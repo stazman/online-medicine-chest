@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { createProfile, getCurrentProfile } from "../../actions/profile";
+import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createProfile, getCurrentProfile } from '../../actions/profile';
 import {Button} from 'react-bootstrap';
 import ButtonStyles from '../styles/ButtonStyles';
 import TextStyles from '../styles/TextStyles';
@@ -52,7 +52,7 @@ const MediaQueries = styled.div`
       font-size: 1.2rem;
     }
   }
-`
+`;
 
 const initialState = {
   bio: '',
@@ -137,11 +137,15 @@ const EditProfile = ({
 EditProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 const mapStatetoProps = state => ({
-  profile: state.profile
+  profile: state.profile,
+  history: PropTypes.object.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
+  createProfile: PropTypes.func.isRequired
 });
 
 export default connect(mapStatetoProps, { createProfile, getCurrentProfile })(
