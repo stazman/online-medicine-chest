@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {login} from '../../actions/auth'
+import {login} from '../../actions/auth';
 import { Button } from 'react-bootstrap';
 import TextStyles from '../styles/TextStyles';
 import ButtonStyles from '../styles/ButtonStyles';
@@ -43,7 +43,7 @@ const MediaQueries = styled.div`
       font-size: 1.8rem;
     }
   }
-`
+`;
 
 const Login = ({login, isAuthenticated}) => {
 
@@ -59,10 +59,10 @@ const Login = ({login, isAuthenticated}) => {
   const onSubmit = async e => {
     e.preventDefault();
     login(email, password);
-  }
+  };
 
   if(isAuthenticated){
-    return <Redirect to='/dashboard' />
+    return <Redirect to='/dashboard' />;
   }
 
   return (
@@ -95,13 +95,13 @@ const Login = ({login, isAuthenticated}) => {
           </form>
           <br></br>
           <p className="my-1">
-            Don't have an account? <Link className='link-standard' to={'/register'}>Sign Up</Link>
+            Don&lsquo;t have an account? <Link className='link-standard' to={'/register'}>Sign Up</Link>
           </p>
         </ButtonStyles>
       </TextStyles>
     </MediaQueries>
-  )
-}
+  );
+};
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
@@ -112,4 +112,4 @@ const mapStatetoProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStatetoProps, { login })(Login)
+export default connect(mapStatetoProps, { login })(Login);

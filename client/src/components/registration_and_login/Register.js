@@ -44,7 +44,7 @@ const MediaQueries = styled.div`
       font-size: 1.8rem;
     }
   }
-`
+`;
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
 
@@ -62,14 +62,14 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   const onSubmit = async e => {
     e.preventDefault();
     if (password !== password2){
-      setAlert('The passwords don\'t match', 'danger')
+      setAlert('The passwords don\'t match', 'danger');
     } else {
       register({ name, email, password });
     }
-  }
+  };
 
   if(isAuthenticated){
-    return <Redirect to='/dashboard' />
+    return <Redirect to='/dashboard' />;
   }
 
   return (
@@ -137,8 +137,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         </ButtonStyles>
       </TextStyles>
     </MediaQueries>
-  )
-}
+  );
+};
 
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
@@ -150,4 +150,4 @@ const mapStatetoProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStatetoProps, { setAlert, register })(Register)
+export default connect(mapStatetoProps, { setAlert, register })(Register);

@@ -7,7 +7,7 @@ import NavbarStyles from './styles/NavbarStyles';
 import { device } from './styles/device';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { logout } from '../actions/auth'
+import { logout } from '../actions/auth';
 
 const MediaQueries = styled.div`
 
@@ -271,10 +271,10 @@ const TopNavbar = ({ auth: { isAuthenticated, loading }, logout}) => {
 TopNavbar.propTypes = {
   logout: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-}
+};
 
 const mapStatetoProps = state => ({
   auth: state.auth
-})
+});
 
 export default connect( mapStatetoProps, {logout} )(TopNavbar);

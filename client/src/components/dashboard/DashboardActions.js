@@ -23,7 +23,7 @@ const MediaQueries = styled.div`
       font-size: 2rem;
     }
   }
-`
+`;
 
 const DashboardActions = () => {
   return (
@@ -36,7 +36,7 @@ const DashboardActions = () => {
         </ButtonStyles>
       </MediaQueries>
     </div>
-  )
-}
+  );
+};
 
 export default DashboardActions;

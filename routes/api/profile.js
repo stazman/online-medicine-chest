@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth');
@@ -19,18 +20,18 @@ router.get('/me', auth, async (req, res) => {
     console.log(err.message);
     res.status(500).send('Server error');
   }
-})
+});
 
 router.post('/', auth, async (req, res) => {
 
   const { bio, interests } = req.body;
 
-  const profileFields = {}
+  const profileFields = {};
 
   profileFields.user = req.user.id;
   if (bio) profileFields.bio = bio;
   if (interests) {
-    profileFields.interests = interests.split(',').map( interest => interest.trim())
+    profileFields.interests = interests.split(',').map( interest => interest.trim());
   }
 
   try {
@@ -57,7 +58,7 @@ router.post('/', auth, async (req, res) => {
     console.log(err.message);
     res.status(500).send('Server Error');
   }
-})
+});
 
 router.delete('/', auth, async (req, res) => {
 
@@ -71,11 +72,11 @@ router.delete('/', auth, async (req, res) => {
 
   } catch (err){
 
-      console.log(err.message);
+    console.log(err.message);
 
-      res.status(500).send('Server error');
+    res.status(500).send('Server error');
 
   }
-})
+});
 
 module.exports = router;

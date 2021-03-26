@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react/display-name */
+import React from 'react';
 import spinner from './loading.gif';
 
 export default () => (
@@ -9,4 +10,4 @@ export default () => (
       alt='Loading ...'
     />
   </>
-)
+);

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { getCurrentProfile } from "../../actions/profile";
-import Spinner from "../layouts/Spinner";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getCurrentProfile } from '../../actions/profile';
+import Spinner from '../layouts/Spinner';
 import DashboardActions from './DashboardActions';
 import styled from 'styled-components';
 import { device } from '../styles/device';
@@ -62,7 +62,7 @@ const MediaQueries = styled.div`
       font-size: 1.6rem;
     }
   }
-`
+`;
 
 const Dashboard = ({
   getCurrentProfile,
@@ -71,7 +71,7 @@ const Dashboard = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, [getCurrentProfile])
+  }, [getCurrentProfile]);
 
 
   return loading && profile === null ? (
@@ -99,14 +99,14 @@ const Dashboard = ({
                 <br></br>
                 <ul className='inline'>
                   {profile.interests.map( i =>
-                    <li className='list-button'><Button variant='show-vsmall'>{i}</Button>&nbsp;&nbsp;</li>
+                    <li key={i} className='list-button'><Button variant='show-vsmall'>{i}</Button>&nbsp;&nbsp;</li>
                   )}
                 </ul>
               </div>
               <br></br><br></br><br></br>
               <DashboardActions />
             </>
-          :
+            :
             <>
               <p>You have not set up a profile. Please add some info ...</p>
               <br></br>

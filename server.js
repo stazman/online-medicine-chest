@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const express = require('express');
 const app = express();
 const connectDB = require('./config/db');
@@ -9,7 +10,7 @@ connectDB();
 
 app.use(express.json({
   extended: false
-}))
+}));
 
 app.get('/', (req, res) => res.send('API running'));
 
@@ -19,4 +20,4 @@ app.use('/api/profile', require('./routes/api/profile'));
 
 app.listen(PORT, function(){
   console.log('Server is running on Port ' + PORT);
-})
+});

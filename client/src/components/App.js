@@ -31,48 +31,48 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <TopNavbar />
-          <Layout>
-            <br></br><br></br><br></br><br></br><br></br><br></br>
-            <Alert />
-            <Switch>
-              {
-                <Route
-                  exact path='/'
-                  component={Advisor}
-                />
-              }
-              {
-                <Route
-                  exact path='/register'
-                  component={Register}
-                />
-              }
-              {
-                <Route
-                  exact path='/login'
-                  component={Login}
-                />
-              }
-              {
-                <PrivateRoute
-                  exact path='/dashboard'
-                  component={Dashboard}
-                />
-              }
-              {
-                <PrivateRoute
-                  exact path='/create-profile'
-                  component={ProfileInput}
-                />
-              }
-              {
-                <PrivateRoute
-                  exact path='/edit-profile'
-                  component={EditProfile}
-                />
-              }
-            </Switch>
-          </Layout>
+        <Layout>
+          <br></br><br></br><br></br><br></br><br></br><br></br>
+          <Alert />
+          <Switch>
+            {
+              <Route
+                exact path='/'
+                component={Advisor}
+              />
+            }
+            {
+              <Route
+                exact path='/register'
+                component={Register}
+              />
+            }
+            {
+              <Route
+                exact path='/login'
+                component={Login}
+              />
+            }
+            {
+              <PrivateRoute
+                exact path='/dashboard'
+                component={Dashboard}
+              />
+            }
+            {
+              <PrivateRoute
+                exact path='/create-profile'
+                component={ProfileInput}
+              />
+            }
+            {
+              <PrivateRoute
+                exact path='/edit-profile'
+                component={EditProfile}
+              />
+            }
+          </Switch>
+        </Layout>
         <BottomNavbar />
       </Router>
     </Provider>
