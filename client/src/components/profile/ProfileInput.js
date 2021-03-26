@@ -52,7 +52,7 @@ const MediaQueries = styled.div`
       font-size: 1.2rem;
     }
   }
-`
+`;
 
 const ProfileInput = ( { createProfile, history } ) => {
 
@@ -114,11 +114,12 @@ const ProfileInput = ( { createProfile, history } ) => {
         </ButtonStyles>
       </TextStyles>
     </MediaQueries>
-  )
+  );
 };
 
 ProfileInput.propTypes = {
-  createProfile: PropTypes.func.isRequired
+  createProfile: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 export default connect (null, { createProfile })(withRouter(ProfileInput));
