@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ColumnStyles = styled.div`
   .col-lg-12.message-col {
     min-height: 10rem;
-    padding-top: 7rem;
+    padding-top: 0;
     text-align: center;
   }
 
