@@ -1,14 +1,22 @@
-TODOS:
+***** TODOS:
 
-Users
-
-  Updates user
-
-  Adds password rules to validation
-
-Adds profile to dashboard
 
 Adds Resources feature
+
+  __ Add resource from front end
+
+        __ Sets up action/reducer
+
+        __ Creates form
+
+        __ Adds new resource to database
+
+  __ Show all resources when navigate to resources page
+
+    __ Shows new resource when new resource posted (ordered by date of entry)
+
+  __ Delete resource
+
 
 Adds Journals feature
 
@@ -20,14 +28,38 @@ Adds Community feature
 
 Adds Tracker feature
 
-Refactors CSS across app
+  __ Add goals
 
-Lints
-
-
+  __ Update goals
 
 
-Unused code:
+***** Refactor:
+
+Users
+
+   __ Updates user
+
+   __ Adds password rules to validation
+
+
+
+***** Unused code/comments/for blog:
+
+
+  //The first parameter passed to useState() is the state, here it's formData, for which we set its properties explicitly ('initial state' can we say ???); the second parameter, which sets the state when it changes, is shown here as setFormData, but it's value is not assigned until all of the properties are destructured into the setFormData variable/parameter.
+
+// Without destructuring:
+  // const ProfileInput = props => {
+
+  // const profileHook = useState('');
+  // const profileState = profileHook[0];
+  // const setProfile = profileHook[1];
+  // }
+
+
+
+
+
 
 // import FoodAdvisorsContainer from '../containers/FoodAdvisorsContainer';
 // import TrackerHome from './trackers/TrackerHome';
