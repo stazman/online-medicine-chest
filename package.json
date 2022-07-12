@@ -20,12 +20,14 @@
     "express-validator": "^6.4.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.5",
-    "normalize-url": "^5.0.0"
+    "normalize-url": "^5.0.0",
+    "ansi-html": ">=0.0.8"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
     "eslint": "^6.6.0",
     "nodemon": "^2.0.2",
-    "axios": ">=0.21.2" 
+    "axios": ">=0.21.2",
+    "ansi-html": ">=0.0.8"
   }
 }
